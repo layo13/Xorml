@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entities>
+	<entity name="ad" tableName="ad">
+		<attribute columnName="id" type="int" isPrimaryKey="true" strategy="auto_increment">id</attribute>
+		<attribute columnName="title" type="string" size="64">title</attribute>
+		<attribute columnName="description" type="text">description</attribute>
+		<attribute columnName="date_add" type="datetime">dateAdd</attribute>
+		<attribute columnName="price" type="float">price</attribute>
+		<attribute columnName="password" type="string" size="64">password</attribute>
+		<attribute columnName="phone_number" type="string" size="10" nullable="true">phoneNumber</attribute>
+		<attribute columnName="email" type="string" size="128">email</attribute>
+		<attribute columnName="category" relation="ManyToOne" with="category">category</attribute>
+	</entity>
+	<entity name="category" tableName="category">
+		<attribute columnName="id" type="int" isPrimaryKey="true" strategy="auto_increment">id</attribute>
+		<attribute columnName="label" type="string" size="64">label</attribute>
+		<attribute columnName="level" type="int">level</attribute>
+		<attribute columnName="parent" relation="ManyToOne" with="category">parent</attribute>
+	</entity>
+</entities>
