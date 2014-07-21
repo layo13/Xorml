@@ -17,4 +17,27 @@
 		<attribute columnName="level" type="int">level</attribute>
 		<attribute columnName="parent" relation="ManyToOne" with="category">parent</attribute>
 	</entity>
+	<entity name="characteristic" tableName="characteristic">
+		<attribute columnName="id" type="int" isPrimaryKey="true" strategy="auto_increment">id</attribute>
+		<attribute columnName="label" type="string" size="64">label</attribute>
+		<attribute columnName="type" relation="ManyToOne" with="type">type</attribute>
+		<attribute columnName="category" relation="ManyToOne" with="category">category</attribute>
+	</entity>
+	<entity name="value" tableName="value">
+		<attribute columnName="id" type="int" isPrimaryKey="true" strategy="auto_increment">id</attribute>
+		<attribute columnName="label" type="string" size="64">label</attribute>
+		<attribute columnName="characteristic" relation="ManyToOne" with="characteristic">characteristic</attribute>
+	</entity>
+	<entity name="user" tableName="user">
+		<attribute columnName="id" type="int" isPrimaryKey="true" strategy="auto_increment">id</attribute>
+		<attribute columnName="email" type="string" size="128">email</attribute>
+		<attribute columnName="nickname" type="string" size="16">nickname</attribute>
+		<attribute columnName="password" type="string" size="64">password</attribute>
+		<attribute columnName="address" type="string" size="64">address</attribute>
+		<attribute columnName="further_address" type="string" size="64">furtherAddress</attribute>
+		<attribute columnName="phone_home" type="string" size="10">phoneHome</attribute>
+		<attribute columnName="phone_mobile" type="string" size="10">phoneMobile</attribute>
+		<attribute columnName="city" type="string" size="64">city</attribute>
+		<attribute columnName="zip_code" type="string" size="5">zipCode</attribute>
+	</entity>
 </entities>

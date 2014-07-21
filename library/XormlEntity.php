@@ -13,6 +13,22 @@ class XormlEntity {
 		$this->attributes = array();
 	}
 	
+	public function getName() {
+		return $this->name;
+	}
+
+	public function getAttributes() {
+		return $this->attributes;
+	}
+
+	public function setName($name) {
+		$this->name = $name;
+	}
+
+	public function setAttributes($attributes) {
+		$this->attributes = $attributes;
+	}
+	
 	public function addAttribute(XormlAttribute $attribute) {
 		$this->attributes[] = $attribute;
 	}
